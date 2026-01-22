@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이동전화 가입신청</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" type="text/css" href="https://www.freet.co.kr/assets/css/font.css?v=2026.01.05.0">
+    <link rel="stylesheet" type="text/css" href="https://www.freet.co.kr/assets/css/common.css?v=2026.01.05.0">
+    <link rel="stylesheet" type="text/css" href="https://www.freet.co.kr/assets/css/sub.css?v=2026.01.05.0">
+    <link rel="stylesheet" type="text/css" href="https://www.freet.co.kr/assets/css/main.css?v=2026.01.05.0">
+    <link rel="stylesheet" href="main2.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <span class="title">이동전화 가입신청</span>
+                <img src="assets/img/freet_logo.svg" alt="프리티" class="logo">
+                <button class="close" aria-label="닫기">
+                    <img src="https://www.freet.co.kr/assets/images/icon/close6.svg" alt="닫기">
+                </button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <form class="form-container" id="applicationForm">
+
+                <!-- 통신망 및 결제방식 -->
+                <section class="form-section section-no-padding-top">
+                    <div class="section-row section-no-padding-top">
+                        <div class="section-label">
+                            <span class="label-text">통신망 및 결제방식</span>
+                            <span class="required">(필수)</span>
+                        </div>
+                        <div class="section-content">
+                            <div class="input-row two-col">
+                                <div class="form-field">
+                                    <div class="select-wrap">
+                                        <select id="carrier" name="carrier" class="select-type2" required>
+                                            <option value="SKT">SKT</option>
+                                            <option value="KT">KT</option>
+                                            <option value="LGU">LG U+</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-field">
+                                    <div class="select-wrap">
+                                        <select id="paymentType" name="paymentType" class="select-type2" required>
+                                            <option value="postpaid">후불</option>
+                                            <option value="prepaid">선불</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 방문 고객 정보 -->
+                <section class="form-section">
+                    <div class="section-row">
+                        <div class="section-label">
+                            <span class="label-text">방문 고객 정보</span>
+                        </div>
+                        <div class="section-content">
+
+                            <!-- 가입자와의 관계 / 고객구분 -->
+                            <div class="field-group">
+                                <div class="input-row two-col">
+                                    <div class="form-field">
+                                        <label class="field-label">가입자와의 관계 <span class="required_s">(필수)</span></label>
+                                        <div class="select-wrap">
+                                            <select id="relationship" name="relationship"  class="select-type2" required>
+                                                <option value="self">본인</option>
+                                                <option value="agent">대리인</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <label class="field-label">고객구분 <span class="required_s">(필수)</span></label>
+                                        <div class="select-wrap">
+                                            <select id="customerType" name="customerType" class="select-type2" required>
+                                                <option value="korean">내국인</option>
+                                                <option value="foreigner">외국인</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 업무구분 -->
+                            <div class="field-group">
+                                <label class="field-label">업무구분 <span class="required_s">(필수)</span></label>
+                                <div class="select-wrap">
+                                    <select id="businessType" name="businessType" class="select-type2" required>
+                                        <option value="numberTransfer">번호이동</option>
+                                        <option value="newSubscription">신규가입</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 가입 고객 정보 -->
+                <section class="form-section">
+                    <div class="section-row">
+                        <div class="section-label">
+                            <span class="label-text">가입 고객 정보</span>
+                        </div>
+                        <div class="section-content">
+
+                            <!-- 고객명 / 법정생년월일 -->
+                            <div class="field-group">
+                                <div class="input-row two-col">
+                                    <div class="form-field">
+                                        <label class="field-label">고객명 <span class="required_s">(필수)</span></label>
+                                        <div class="input-wrap">
+                                            <input type="text" id="customerName" name="customerName" class="input-type2" placeholder="고객명(법인명)" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <label class="field-label">법정생년월일 <span class="required_s">(필수)</span></label>
+                                        <div class="input-wrap">
+                                            <input type="text" id="birthDate" name="birthDate" class="input-type2" placeholder="법정생년월일" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 연락받을 전화번호 -->
+                            <div class="field-group">
+                                <label class="field-label">연락받을 전화번호 <span class="optional">(선택)</span></label>
+                                <div class="input-wrap">
+                                    <input type="tel" id="contactPhone" name="contactPhone" class="input-type2" placeholder="연락받을 전화번호">
+                                </div>
+                            </div>
+
+                            <!-- 국적 (외국인용) -->
+                            <div class="field-group foreigner-only">
+                                <label class="field-label">국적(Nationality) <span class="required_s">(필수)</span></label>
+                                <div class="input-wrap">
+                                    <input type="text" id="nationality" name="nationality" class="input-type2" placeholder="국적(Nationality)">
+                                </div>
+                            </div>
+
+                            <!-- 외국인 등록(여권)번호 (외국인용) -->
+                            <div class="field-group foreigner-only">
+                                <label class="field-label">
+                                    외국인 등록(여권)번호
+                                    <span class="passport_en">(Alien Registration(Passport) Number) </span>
+                                    <span class="required_s passport_2">(필수)</span>
+                                </label>
+                                <div class="input-wrap">
+                                    <input type="text" id="alienRegistrationNumber" name="alienRegistrationNumber" class="input-type2" placeholder="외국인 등록(여권)번호">
+                                </div>
+                            </div>
+
+                            <!-- 청구서 종류 (후불용) -->
+                            <div class="field-group postpaid-only">
+                                <label class="field-label">청구서 종류 <span class="required_s">(필수)</span></label>
+                                <div class="select-wrap">
+                                    <select id="billType" name="billType" class="select-type2" required>
+                                        <option value="sms">문자 청구서</option>
+                                        <option value="email">이메일</option>
+                                    </select>
+                                </div>
+
+                                <!-- 이메일 입력 폼 (이메일 선택시 표시) -->
+                                <div id="emailInputGroup" class="input-row two-col toggle-field-mt">
+                                    <div class="form-field email-input-field">
+                                        <div class="input-wrap">
+                                            <input type="text" id="emailId" name="emailId" class="input-type2" placeholder="이메일 입력">
+                                        </div>
+                                    </div>
+                                    <div class="form-field email-domain-field">
+                                        <div class="select-wrap">
+                                            <select id="emailDomain" name="emailDomain" class="select-type2">
+                                                <option value="">직접입력</option>
+                                                <option value="naver.com">naver.com</option>
+                                                <option value="gmail.com">gmail.com</option>
+                                                <option value="daum.net">daum.net</option>
+                                                <option value="hanmail.net">hanmail.net</option>
+                                                <option value="nate.com">nate.com</option>
+                                                <option value="kakao.com">kakao.com</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 이메일 (선불용) -->
+                            <div class="field-group prepaid-only">
+                                <label class="field-label">이메일 <span class="optional">(선택)</span></label>
+                                <div class="input-row two-col">
+                                    <div class="form-field email-input-field">
+                                        <div class="input-wrap">
+                                            <input type="text" id="prepaidEmailId" name="prepaidEmailId" class="input-type2" placeholder="이메일 입력">
+                                        </div>
+                                    </div>
+                                    <div class="form-field email-domain-field">
+                                        <div class="select-wrap">
+                                            <select id="prepaidEmailDomain" name="prepaidEmailDomain" class="select-type2">
+                                                <option value="">직접입력</option>
+                                                <option value="naver.com">naver.com</option>
+                                                <option value="gmail.com">gmail.com</option>
+                                                <option value="daum.net">daum.net</option>
+                                                <option value="hanmail.net">hanmail.net</option>
+                                                <option value="nate.com">nate.com</option>
+                                                <option value="kakao.com">kakao.com</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 주소 -->
+                            <div class="field-group">
+                                <label class="field-label">주소 <span class="required_s">(필수)</span></label>
+                                <div class="address-wrap">
+                                    <div class="address-row">
+                                        <div class="input-wrap flex-grow">
+                                            <input type="text" id="zipCode" name="zipCode" class="input-type2" placeholder="우편번호" readonly>
+                                        </div>
+                                        <button type="button" class="btn-address" onclick="searchAddress()">주소찾기</button>
+                                    </div>
+                                    <div class="input-wrap">
+                                        <input type="text" id="address" name="address" class="input-type2" placeholder="주소" readonly>
+                                    </div>
+                                    <div class="input-wrap">
+                                        <input type="text" id="addressDetail" name="addressDetail" class="input-type2" placeholder="상세주소">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 요금납부정보 -->
+                <section class="form-section" id="paymentInfoSection">
+                    <div class="section-row">
+                        <div class="section-label">
+                            <span class="label-text">요금납부정보</span>
+                        </div>
+                        <div class="section-content">
+
+                            <!-- 자동 충전 방법 (선불용) -->
+                            <div class="field-group prepaid-only">
+                                <label class="field-label">자동 충전 방법 <span class="required_s">(필수)</span></label>
+                                <div class="select-wrap">
+                                    <select id="autoRechargeMethod" name="autoRechargeMethod" class="select-type2">
+                                        <option value="none">사용하지 않음</option>
+                                        <option value="bank">은행</option>
+                                        <option value="card">신용카드</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 자동 충전 금액 (선불 - 은행/신용카드 선택 시) -->
+                            <div class="field-group prepaid-only" id="autoRechargeAmountGroup">
+                                <label class="field-label">자동 충전 금액(원) <span class="required_s">(필수)</span></label>
+                                <div class="input-wrap">
+                                    <input type="text" id="autoRechargeAmount" name="autoRechargeAmount" class="input-type2" placeholder="자동 충전 금액">
+                                </div>
+                            </div>
+
+                            <!-- 요금 납부 방법 -->
+                            <div class="field-group">
+                                <label class="field-label">요금 납부 방법 <span class="required_s">(필수)</span></label>
+                                <div class="input-row two-col">
+                                    <div class="form-field device-model-field">
+                                        <div class="select-wrap">
+                                            <select id="paymentMethod" name="paymentMethod" class="select-type2" required>
+                                                <option value="account">계좌</option>
+                                                <option value="card">신용카드</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- 계좌 선택 시 계좌번호 입력 -->
+                                    <div class="form-field device-serial-field" id="accountNumberField">
+                                        <div class="input-wrap">
+                                            <input type="text" id="accountNumber" name="accountNumber" class="input-type2" placeholder="납부할 계좌번호">
+                                        </div>
+                                    </div>
+
+                                    <!-- 신용카드 선택 시 카드번호 입력 -->
+                                    <div class="form-field toggle-field device-serial-field" id="cardNumberField">
+                                        <div class="input-wrap">
+                                            <input type="text" id="cardNumber" name="cardNumber" class="input-type2" placeholder="신용카드 번호">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 신용카드 유효기간 (신용카드 선택 시 표시) -->
+                                <div id="cardExpiryGroup" class="input-row two-col card-expiry-row toggle-field-mt">
+                                    <div class="form-field">
+                                        <div class="select-wrap">
+                                            <select id="cardExpiryMonth" name="cardExpiryMonth" class="select-type2">
+                                                <option value="">신용카드 유효기간 (MM)</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="select-wrap">
+                                            <select id="cardExpiryYear" name="cardExpiryYear" class="select-type2">
+                                                <option value="">신용카드 유효기간 (YY)</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                                <option value="32">32</option>
+                                                <option value="33">33</option>
+                                                <option value="34">34</option>
+                                                <option value="35">35</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 예금주/카드주 정보 -->
+                            <div class="field-group" id="accountHolderGroup">
+                                <div class="field-label-row">
+                                    <label class="field-label" id="holderInfoLabel">예금주 정보 <span class="required_s">(필수)</span></label>
+                                    <label class="chk-box">
+                                        <input type="checkbox" id="sameAsSubscriber" name="sameAsSubscriber">
+                                        <span class="chk-ico"></span>
+                                        <span class="chk-txt">가입자와 동일</span>
+                                    </label>
+                                </div>
+                                <div class="input-row two-col">
+                                    <div class="form-field">
+                                        <div class="input-wrap">
+                                            <input type="text" id="accountHolder" name="accountHolder" class="input-type2" placeholder="예금주(카드주)명">
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="input-wrap">
+                                            <input type="text" id="accountHolderBirth" name="accountHolderBirth" class="input-type2" placeholder="법정생년월일">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-wrap">
+                                    <input type="text" id="accountHolderRelation" name="accountHolderRelation" class="input-type2" placeholder="가입자와의 관계">
+                                </div>
+                            </div>
+
+                            <!-- 은행명 (계좌 선택 시만 표시) -->
+                            <div class="field-group" id="bankNameGroup">
+                                <label class="field-label">은행명 <span class="required_s">(필수)</span></label>
+                                <div class="input-wrap">
+                                    <input type="text" id="bankName" name="bankName" class="input-type2" placeholder="은행명" required>
+                                </div>
+                            </div>
+
+                            <!-- 계좌번호 (선불 자동충전 은행 선택 시) -->
+                            <div class="field-group toggle-field" id="accountNumberGroup">
+                                <label class="field-label">계좌번호 <span class="required_s">(필수)</span></label>
+                                <div class="input-wrap">
+                                    <input type="text" id="autoRechargeAccountNumber" name="autoRechargeAccountNumber" class="input-type2" placeholder="계좌번호">
+                                </div>
+                            </div>
+
+                            <!-- 카드 정보 (선불 자동충전 신용카드 선택 시) -->
+                            <div class="field-group toggle-field" id="prepaidCardInfoGroup">
+                                <label class="field-label">카드 정보 <span class="required_s">(필수)</span></label>
+                                <div class="input-wrap">
+                                    <input type="text" id="prepaidCardNumber" name="prepaidCardNumber" class="input-type2" placeholder="신용(체크)카드 번호">
+                                </div>
+                                <div class="input-row two-col mt-12">
+                                    <div class="form-field">
+                                        <div class="select-wrap">
+                                            <select id="prepaidCardExpiryMonth" name="prepaidCardExpiryMonth" class="select-type2">
+                                                <option value="">카드 유효기간 (MM)</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="select-wrap">
+                                            <select id="prepaidCardExpiryYear" name="prepaidCardExpiryYear" class="select-type2">
+                                                <option value="">카드 유효기간 (YY)</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                                <option value="32">32</option>
+                                                <option value="33">33</option>
+                                                <option value="34">34</option>
+                                                <option value="35">35</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 연락받을 번호 (후불용) -->
+                            <div class="field-group postpaid-only" id="paymentContactPhoneGroup">
+                                <label class="field-label">연락받을 번호 <span class="optional">(선택)</span></label>
+                                <div class="input-wrap">
+                                    <input type="tel" id="paymentContactPhone" name="paymentContactPhone" class="input-type2" placeholder="연락받을 번호">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 번호 이동 정보 (번호이동 선택 시만 표시, 후불만) -->
+                <section class="form-section number_section toggle-field postpaid-only" id="numberTransferSection">
+                    <div class="section-row">
+                        <div class="section-label">
+                            <span class="label-text">번호 이동 정보</span>
+                        </div>
+                        <div class="section-content">
+
+                            <!-- 번호 이동할 전화번호 -->
+                            <div class="field-group">
+                                <label class="field-label">번호 이동할 전화번호 <span class="required_s">(필수)</span></label>
+                                <div class="input-row two-col">
+                                    <div class="form-field device-model-field">
+                                        <div class="select-wrap">
+                                            <select id="transferPhoneType" name="transferPhoneType" class="select-type2">
+                                                <option value="prepaid">선불</option>
+                                                <option value="postpaid">후불</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-field device-serial-field">
+                                        <div class="input-wrap">
+                                            <input type="tel" id="transferPhoneNumber" name="transferPhoneNumber" class="input-type2" placeholder="번호 이동할 전화번호 입력">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-row two-col mt-10" id="previousCarrierRow">
+                                    <div class="form-field" id="previousCarrierField">
+                                        <div class="select-wrap">
+                                            <select id="previousCarrier" name="previousCarrier" class="select-type2">
+                                                <option value="">이전 통신사</option>
+                                                <option value="SKT">SKT</option>
+                                                <option value="KT">KT</option>
+                                                <option value="LGU">LG U+</option>
+                                                <option value="SKT_MVNO">알뜰폰 (SKT)</option>
+                                                <option value="KT_MVNO">알뜰폰 (KT)</option>
+                                                <option value="LGU_MVNO">알뜰폰 (LGU+)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- 알뜰폰 선택 시 업체명 입력 -->
+                                    <div class="form-field toggle-field device-serial-field" id="mvnoNameField">
+                                        <div class="input-wrap">
+                                            <input type="text" id="mvnoName" name="mvnoName" class="input-type2" placeholder="알뜰폰 업체명">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 이전 통신사 사용 요금 / 단말기 할부금 -->
+                            <div class="field-group previous-carrier-group">
+                                <div class="input-row two-col col-two">
+                                    <div class="form-field">
+                                        <div class="checkbox-label-row">
+                                            <span class="field-label-text">이전 통신사 사용 요금</span>
+                                            <label class="chk-box">
+                                                <input type="checkbox" id="previousCarrierBill" name="previousCarrierBill">
+                                                <span class="chk-ico"></span>
+                                                <span class="chk-txt">청구서 받은 후 합산 청구</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="checkbox-label-row">
+                                            <span class="field-label-text">단말기 할부금</span>
+                                            <label class="chk-box">
+                                                <input type="checkbox" id="deviceInstallment" name="deviceInstallment">
+                                                <span class="chk-ico"></span>
+                                                <span class="chk-txt">할부 지속 (변경 전 통신사에서 납부)</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 가입정보 -->
+                <section class="form-section" id="subscriptionInfoSection">
+                    <div class="section-row">
+                        <div class="section-label">
+                            <span class="label-text">가입정보</span>
+                        </div>
+                        <div class="section-content">
+
+                            <!-- 요금제 -->
+                            <div class="field-group">
+                                <label class="field-label">요금제 <span class="required_s">(필수)</span></label>
+                                <div class="input-wrap has-icon postpaid-only">
+                                    <input type="text" id="planSearch" name="planSearch" class="input-type2" placeholder="요금제명">
+                                    <button type="button" class="btn-search" aria-label="검색"></button>
+                                </div>
+                                <div class="select-wrap">
+                                    <select id="plan" name="plan" class="select-type2" required>
+                                        <option value="">요금제를 선택해주세요.</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 부가 서비스 (선불용) - 요금제 바로 밑 -->
+                            <div class="field-group prepaid-only" id="prepaidAdditionalServiceGroup">
+                                <label class="field-label">부가 서비스 <span class="optional">(선택)</span></label>
+                                <div class="input-wrap">
+                                    <input type="text" id="prepaidAdditionalService" name="prepaidAdditionalService" class="input-type2" placeholder="부가서비스명">
+                                </div>
+                            </div>
+
+                            <!-- 뒷자리 희망번호 (신규가입 시 표시) -->
+                            <div class="field-group toggle-field" id="wishNumberSection">
+                                <label class="field-label">뒷자리 희망번호 (4자리) <span class="required_s">(2개까지 필수)</span></label>
+                                <div class="input-row three-col">
+                                    <div class="form-field">
+                                        <div class="input-wrap">
+                                            <input type="text" id="wishNumber1" name="wishNumber1" class="input-type2" placeholder="0000" maxlength="4">
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="input-wrap">
+                                            <input type="text" id="wishNumber2" name="wishNumber2" class="input-type2" placeholder="0000" maxlength="4">
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="input-wrap">
+                                            <input type="text" id="wishNumber3" name="wishNumber3" class="input-type2" placeholder="0000" maxlength="4">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SIM 정보 -->
+                            <div class="field-group">
+                                <div class="field-label-row">
+                                    <label class="field-label">SIM 정보 <span class="required_s">(필수)</span></label>
+                                    <label class="chk-box postpaid-only">
+                                        <input type="checkbox" id="isEsim" name="isEsim">
+                                        <span class="chk-ico"></span>
+                                        <span class="chk-txt">eSIM</span>
+                                    </label>
+                                </div>
+
+                                <!-- 일반 USIM 입력 -->
+                                <div id="usimInputGroup">
+                                    <!-- LGU+ 선택 시 모델 + USIM 입력 (후불 전용) -->
+                                    <div id="lguSimRow" class="input-row two-col toggle-field postpaid-only">
+                                        <div class="form-field device-model-field">
+                                            <div class="select-wrap">
+                                                <select id="simModel" name="simModel" class="select-type2">
+                                                    <option value="">모델</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-field device-serial-field">
+                                            <div class="input-wrap">
+                                                <input type="text" id="usimNumberLgu" name="usimNumberLgu" class="input-type2" placeholder="USIM번호 8자리">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- SKT/KT 선택 시 USIM 입력만 -->
+                                    <div id="defaultSimInput" class="input-wrap">
+                                        <input type="text" id="usimNumber" name="usimNumber" class="input-type2" placeholder="USIM번호 8자리" required>
+                                    </div>
+                                </div>
+
+                                <!-- eSIM 선택 시 표시 (후불 전용) -->
+                                <div id="esimInputGroup" class="toggle-field postpaid-only">
+                                    <div class="esim-notice">
+                                        eSIM 단말의 경우 개통에 필요한 사용자 인증정보 다운로드 수수료 2,750원(부가세 포함)이 다음달 요금에 합산 청구됩니다.
+                                    </div>
+                                    <div class="input-wrap mt-12">
+                                        <input type="text" id="imei1" name="imei1" class="input-type2" placeholder="IMEI">
+                                    </div>
+                                    <div class="input-wrap mt-12">
+                                        <input type="text" id="imei2" name="imei2" class="input-type2" placeholder="IMEI2(eSIM IMEI)">
+                                    </div>
+                                    <div class="input-wrap mt-12">
+                                        <input type="text" id="eid" name="eid" class="input-type2" placeholder="EID(32자리)">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 번호 이동할 전화번호 (선불 + 번호이동 시) -->
+                            <div class="field-group prepaid-number-transfer">
+                                <label class="field-label">번호 이동할 전화번호 <span class="required_s">(필수)</span></label>
+                                <div class="input-row two-col">
+                                    <div class="form-field">
+                                        <div class="select-wrap">
+                                            <select id="prepaidTransferPhoneType" name="prepaidTransferPhoneType" class="select-type2">
+                                                <option value="prepaid">선불</option>
+                                                <option value="postpaid">후불</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-field">
+                                        <div class="input-wrap">
+                                            <input type="text" id="prepaidTransferPhoneNumber" name="prepaidTransferPhoneNumber" class="input-type2" placeholder="번호 이동할 전화번호 입력">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-row two-col mt-12">
+                                    <div class="form-field">
+                                        <div class="select-wrap">
+                                            <select id="prepaidPreviousCarrier" name="prepaidPreviousCarrier" class="select-type2">
+                                                <option value="">이전 통신사</option>
+                                                <option value="SKT">SKT</option>
+                                                <option value="KT">KT</option>
+                                                <option value="LGU">LG U+</option>
+                                                <option value="SKT_MVNO">알뜰폰 (SKT)</option>
+                                                <option value="KT_MVNO">알뜰폰 (KT)</option>
+                                                <option value="LGU_MVNO">알뜰폰 (LGU+)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- 알뜰폰 선택 시 업체명 입력 -->
+                                    <div class="form-field toggle-field" id="prepaidMvnoNameField">
+                                        <div class="input-wrap">
+                                            <input type="text" id="prepaidMvnoName" name="prepaidMvnoName" class="input-type2" placeholder="알뜰폰 업체명">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 단말기 정보 -->
+                            <div class="field-group">
+                                <label class="field-label">단말기 정보 <span class="optional">(선택)</span></label>
+                                <div class="input-row two-col">
+                                    <div class="form-field device-model-field">
+                                        <div class="input-wrap">
+                                            <input type="text" id="deviceModel" name="deviceModel" class="input-type2" placeholder="모델명">
+                                        </div>
+                                    </div>
+                                    <div class="form-field device-serial-field">
+                                        <div class="input-wrap">
+                                            <input type="text" id="deviceSerial" name="deviceSerial" class="input-type2" placeholder="일련번호">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 신청 고객명 (대리인) - 후불에서 대리인 선택 시 표시 -->
+                            <div class="field-group agent-name-group" id="agentNameGroup">
+                                <label class="field-label">신청 고객명 (대리인) <span class="required_s">(필수)</span></label>
+                                <div class="input-wrap">
+                                    <input type="text" id="agentName" name="agentName" class="input-type2" placeholder="신청 고객명 (대리인)">
+                                </div>
+                            </div>
+                            
+                            <!-- 부가 서비스 (후불용) -->
+                            <div class="field-group postpaid-only">
+                                <label class="field-label">부가 서비스 <span class="optional">(선택)</span></label>
+                                <div class="checkbox-group">
+                                    <label class="chk-box">
+                                        <input type="checkbox" id="dataSharingService" name="additionalServices" value="dataSharing">
+                                        <span class="chk-ico"></span>
+                                        <span class="chk-txt">통신 과금 서비스 신청</span>
+                                    </label>
+                                    <label class="chk-box">
+                                        <input type="checkbox" id="wifiBlockService" name="additionalServices" value="wifiBlock">
+                                        <span class="chk-ico"></span>
+                                        <span class="chk-txt">무선 인터넷 차단 신청</span>
+                                    </label>
+                                </div>
+                                <div class="checkbox-with-input">
+                                    <label class="chk-box">
+                                        <input type="checkbox" id="otherService" name="additionalServices" value="other">
+                                        <span class="chk-ico"></span>
+                                        <span class="chk-txt">기타</span>
+                                    </label>
+                                    <div class="input-wrap flex-grow">
+                                        <!-- 모바일용 select -->
+                                        <select id="otherServiceNameSelect" name="otherServiceNameSelect" class="input-type2 mobile-only" disabled>
+                                            <option value="">기타 부가서비스 선택</option>
+                                            <option value="테스트">테스트</option>
+                                        </select>
+                                        <!-- 데스크톱용 input -->
+                                        <input type="text" id="otherServiceName" name="otherServiceName" class="input-type2 desktop-only" placeholder="부가서비스명" disabled>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 접수자 정보 (인쇄 버튼 바로 위) -->
+                <section class="form-section agent-info-section" id="agentInfoSection">
+                    <div class="section-row section-no-padding-top">
+                        <div class="section-label">
+                            <span class="label-text"></span>
+                        </div>
+                        <div class="section-content">
+                            <!-- 신청 고객 (대리인) - 선불 + 본인 외 선택 시 표시 -->
+                            <div class="field-group prepaid-only" id="applicantNameGroup">
+                                <label class="field-label">신청 고객 (대리인) <span class="required_s">(필수)</span></label>
+                                <div class="input-wrap">
+                                    <input type="text" id="applicantName" name="applicantName" class="input-type2" placeholder="신청 고객명 (대리인)">
+                                </div>
+                            </div>
+
+                            <!-- 접수자 관리 코드 -->
+                            <div class="field-group">
+                                <label class="field-label">접수자 관리 코드 <span class="required_s">(필수)</span></label>
+                                <div class="input-wrap">
+                                    <input type="text" id="agentCode" name="agentCode" class="input-type2" placeholder="코드번호 입력" required>
+                                </div>
+                            </div>
+
+                            <!-- 접수자 전화번호 -->
+                            <div class="field-group">
+                                <label class="field-label">접수자 전화번호 <span class="required_s">(필수)</span></label>
+                                <div class="input-wrap">
+                                    <input type="tel" id="agentPhone" name="agentPhone" class="input-type2" placeholder="010-0000-0000" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 인쇄하기 버튼 -->
+                <div class="form-actions">
+                    <button type="button" class="btn-print" onclick="window.print()">인쇄하기</button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="assets/js/action.js"></script>
+
+</body>
+
+</html>
