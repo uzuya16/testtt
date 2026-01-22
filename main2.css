@@ -1,0 +1,1149 @@
+@charset "UTF-8";
+
+/* reset */
+* {
+  box-sizing: border-box;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "SUIT", sans-serif;
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  padding: 20px 16px;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 100;
+  margin-bottom: 80px;
+}
+
+.header-inner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #111111;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.logo {
+  height: 20px;
+  margin-right: 16px;
+}
+
+.close {
+  width: 24px !important;
+  height: 24px !important;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Main Content */
+.main-content {
+  width: 100%;
+  max-width: 852px;
+}
+
+.form-container {
+  width: 100%;
+}
+
+/* Form Section */
+.form-section {
+  margin-bottom: 0;
+}
+
+.section-row {
+  display: flex;
+}
+
+.form-section:last-of-type .section-row {
+  border-bottom: none;
+}
+
+/* Section Label (왼쪽 라벨) */
+.section-label {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.section-label .label-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111111;
+}
+
+/* Section Content (오른쪽 입력 영역) */
+.section-content {
+  flex: 1;
+}
+
+/* Field Group */
+.field-group {
+  margin-bottom: 24px;
+}
+
+.field-group:last-child {
+  margin-bottom: 0;
+}
+
+/* Field Label */
+.field-label {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 16px;
+}
+
+.field-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.field-label-row .field-label {
+  margin-bottom: 0;
+}
+
+.passport_en {
+  display: inline;
+}
+
+.passport_en::before {
+  content: "";
+  display: none; /* PC에서는 줄바꿈 안 함 */
+}
+
+/* Required / Optional */
+.required {
+  color: #F0543A;
+  font-size: 20px;
+  font-weight: 600;
+}
+.required_s {
+  color: #F0543A;
+  font-size: 18px;
+  font-weight: 600; 
+}
+
+.optional {
+  color: #94949a;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Input Row (2열 레이아웃) */
+.input-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.input-row.two-col .form-field {
+  flex: 1;
+}
+
+.input-row.three-col .form-field {
+  flex: 1;
+}
+
+.col-two {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: #F6F9FF;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+.col-two .form-field {
+  flex: none;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.checkbox-label-row {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-label-row .field-label-text {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+}
+
+.checkbox-label-row .chk-box {
+  flex: 1;
+}
+
+/* eSIM 안내 문구 */
+.esim-notice {
+  padding: 20px;
+  background: #EDF4FF;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #123770;
+  line-height: 1.6;
+}
+
+/* 토글 필드 (기본 숨김) */
+.toggle-field {
+  display: none;
+}
+
+/* 토글 필드 with margin-top */
+.toggle-field-mt {
+  display: none;
+  margin-top: 10px;
+}
+
+/* eSIM 입력 필드 margin-top */
+.esim-input-field {
+  margin-top: 12px;
+}
+
+/* 단말기 정보 비율 (40% : 60%) */
+.input-row.two-col .form-field.device-model-field {
+  flex: 0 0 40%;
+}
+
+.input-row.two-col .form-field.device-serial-field {
+  flex: 0 0 calc(60% - 20px);
+}
+
+/* 청구서 이메일 비율 (60% : 40%) */
+.input-row.two-col .form-field.email-input-field {
+  flex: 0 0 60%;
+}
+
+.input-row.two-col .form-field.email-domain-field {
+  flex: 0 0 calc(40% - 20px);
+}
+
+/* margin-top utilities */
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-12 {
+  margin-top: 12px;
+}
+
+/* Visibility and Display Utilities */
+.foreigner-only,
+.prepaid-only,
+.postpaid-only,
+.prepaid-number-transfer {
+  display: none;
+}
+
+/* Section Padding Utilities */
+.section-no-padding-top {
+  padding-top: 0 !important;
+}
+
+.agent-info-section {
+  padding-top: 0 !important;
+  padding-bottom: 40px !important;
+}
+
+.agent-name-group {
+  display: none;
+  padding: 0;
+}
+
+/* Mobile Select Toggle */
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+  }
+}
+
+/* Input Styles */
+.input-wrap {
+  position: relative;
+}
+
+.input-wrap.has-icon {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.input-wrap.has-icon .btn-search {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E") no-repeat center;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.input-type2,
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+  width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  background: #f4f4f4;
+  border: 1px solid #efefef;
+  border-radius: 12px;
+  font-size: 18px;
+  color: #111111;
+  transition: all 0.2s ease;
+}
+
+.input-type2::placeholder,
+input::placeholder {
+  color: #94949a;
+}
+
+.input-type2:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus {
+  outline: none;
+  background: #ffebe8;
+  border-color: #F0543A;
+}
+
+/* Select Styles */
+.select-wrap {
+  position: relative;
+}
+
+.select-type2 {
+  width: 100%;
+  height: 56px;
+  padding: 0 40px 0 20px;
+  background: #f4f4f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6L8 10L12 6' stroke='%2394949a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 16px center;
+  border: 1px solid #efefef;
+  border-radius: 12px;
+  font-size: 18px;
+  color: #111111;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: all 0.2s ease;
+}
+
+.select-type2:focus {
+  outline: none;
+  background-color: #ffebe8;
+  border-color: #F0543A;
+}
+
+/* Custom Select Dropdown */
+.custom-select {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select-trigger {
+  width: 100%;
+  height: 56px;
+  padding: 0 40px 0 20px;
+  background: #f4f4f4;
+  border: 1px solid #efefef;
+  border-radius: 12px;
+  font-size: 18px;
+  color: #111111;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+/* placeholder 스타일 (값이 비어있을 때) */
+.custom-select-trigger.placeholder {
+  color: #94949A;
+}
+
+.custom-select-trigger::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6L8 10L12 6' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+  transition: transform 0.2s ease;
+}
+
+/* 활성화 상태 (열림) */
+.custom-select.open .custom-select-trigger {
+  background-color: #ffebe8;
+  border-color: #F0543A;
+}
+
+.custom-select.open .custom-select-trigger::after {
+  transform: translateY(-50%);
+}
+
+/* 드롭다운 옵션 리스트 */
+.custom-select-options {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #efefef;
+  border-radius: 12px;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.custom-select.open .custom-select-options {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.custom-select-option {
+  padding: 16px 20px;
+  font-size: 13px;
+  color: #111111;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.15s ease;
+}
+
+.custom-select-option:hover {
+  background: #f9f9f9;
+}
+
+/* 선택된 옵션 */
+.custom-select-option.selected {
+  color: #F0543A;
+}
+
+.custom-select-option.selected::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 10L8 6L12 10' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+}
+
+/* Disabled 상태 */
+.custom-select.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.custom-select.disabled .custom-select-trigger {
+  background: #f4f4f4;
+  color: #94949A;
+  cursor: not-allowed;
+}
+
+/* Checkbox Styles */
+.chk-box {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.chk-box input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.chk-ico {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #94949A;
+  border-radius: 6px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  background: #ffffff;
+}
+
+.chk-box input[type="checkbox"]:checked + .chk-ico {
+  background: #f0543a;
+  border-color: #f0543a;
+}
+
+.chk-box input[type="checkbox"]:checked + .chk-ico::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 6L5 9L10 3' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center;
+}
+
+.chk-txt {
+  font-size: 16px;
+  color: #111111;
+}
+
+/* Checkbox Group */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  margin-bottom: 12px;
+}
+
+.checkbox-with-input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.checkbox-with-input .chk-box {
+  flex-shrink: 0;
+}
+
+.checkbox-with-input .input-wrap {
+  flex: 1;
+}
+
+.flex-grow {
+  flex: 1;
+}
+
+/* Address */
+.address-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.address-row {
+  display: flex;
+  gap: 12px;
+}
+
+/* 주소 입력 필드 (readonly) */
+.address-wrap .input-type2[readonly] {
+  background: #fff;
+  border-color: #E3E3E3;
+  color: #C3C3C9;
+}
+
+.address-wrap .input-type2[readonly]::placeholder {
+  color: #C3C3C9;
+}
+
+.btn-address {
+  height: 56px;
+  padding: 0 24px;
+  background: #3F4970;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.btn-address:hover {
+  background: #2d3654;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.btn-print {
+  width: 200px;
+  height: 56px;
+  background: #f0543a;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-print:hover {
+  background: #F0543A;
+}
+
+/* Margin Utilities */
+.mb_12 {
+  margin-bottom: 12px;
+}
+
+.mb_16 {
+  margin-bottom: 16px;
+}
+
+
+/* ===== 반응형 ===== */
+
+/* 태블릿: 768px ~ 1023px */
+@media (min-width: 768px) {
+  .header {
+    padding: 28px 24px;
+    margin-bottom: 60px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .logo {
+    height: 24px;
+    margin-right: 24px;
+  }
+
+  .close {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .main-content {
+    padding: 0 40px;
+  }
+
+  .section-row {
+    flex-direction: row;
+    padding-top: 40px;
+  }
+
+  .section-label {
+    width: 160px;
+    margin-bottom: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .section-label .label-text {
+    font-size: 20px;
+  }
+
+  .field-label {
+    font-size: 16px;
+  }
+
+  .required_s,
+  .optional {
+    font-size: 16px;
+  }
+
+  .input-type2,
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  .select-type2,
+  .custom-select-trigger {
+    height: 60px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .btn-address {
+    height: 60px;
+    font-size: 16px;
+  }
+
+  .btn-print {
+    height: 60px;
+    width: 200px;
+    font-size: 18px;
+  }
+
+  .chk-ico {
+    width: 22px;
+    height: 22px;
+  }
+
+  .chk-txt {
+    font-size: 15px;
+  }
+
+  .checkbox-label-row .field-label-text {
+    font-size: 16px;
+  }
+
+  .col-two {
+    font-size: 16px;
+  }
+
+  .esim-notice {
+    font-size: 15px;
+  }
+}
+
+/* 데스크톱: 1024px 이상 */
+@media (min-width: 1024px) {
+  .header {
+    padding: 36px 40px;
+    margin-bottom: 80px;
+  }
+
+  .header-inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 16px;
+    justify-content: normal;
+  }
+
+  .title {
+    grid-column: 1;
+    justify-self: start;
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  .logo {
+    grid-column: 3;
+    justify-self: end;
+    height: auto;
+    margin-right: 0;
+  }
+
+  .close {
+    grid-column: 4;
+    margin-left: 44px;
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .main-content {
+    max-width: 900px;
+    padding: 0;
+  }
+
+  .section-row {
+    gap: 60px;
+  }
+
+  .section-label {
+    width: 205px;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .field-label {
+    font-size: 18px;
+  }
+
+  .required_s,
+  .optional {
+    font-size: 18px;
+  }
+
+  .input-type2,
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  .select-type2,
+  .custom-select-trigger {
+    height: 64px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .btn-address {
+    height: 64px;
+    font-size: 18px;
+  }
+
+  .custom-select-option {
+    font-size: 13px;
+  }
+
+  .btn-print {
+    width: 240px;
+    height: 64px;
+    font-size: 17px;
+  }
+
+  .chk-ico {
+    width: 24px;
+    height: 24px;
+  }
+
+  .chk-txt {
+    font-size: 16px;
+  }
+
+  .checkbox-label-row .field-label-text {
+    font-size: 18px;
+  }
+
+  .col-two {
+    font-size: 18px;
+  }
+
+  .esim-notice {
+    font-size: 16px;
+  }
+}
+
+/* 모바일: ~ 767px (마지막에 배치) */
+@media (max-width: 767px) {
+  /* Header 모바일 */
+  .header {
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+
+  .header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+  }
+
+  .logo {
+    grid-column: 1;
+    grid-row: 1;
+    height: 20px;
+    margin-right: 0;
+    justify-self: start !important;
+    max-width: 103px;
+  }
+
+  .close {
+    grid-column: 2;
+    grid-row: 1;
+    width: 24px !important;
+    height: 24px !important;
+    justify-self: end;
+  }
+
+  .title {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 60px;
+  }
+
+  /* Main Content 모바일 */
+  .main-content {
+    padding: 0 20px;
+    padding-bottom: 100px;
+  }
+
+  /* Section Row - 세로 레이아웃 */
+  .section-row {
+    flex-direction: column;
+    padding-top: 40px;
+  }
+
+  .form-section:last-of-type .section-row {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  /* Section Label 모바일 - 상단 배치 */
+  .section-label {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .section-label .label-text {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .required {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  /* Field Group 모바일 */
+  .field-group {
+    margin-bottom: 20px;
+  }
+
+  /* Field Label 모바일 */
+  .field-label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .required_s,
+  .optional {
+    font-size: 15px;
+  }
+
+  /* Input Row 모바일 - 세로 레이아웃 */
+  .input-row {
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .input-row.two-col {
+    flex-direction: column;
+  }
+
+  .input-row.three-col {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* 신용카드 유효기간 MM/YY는 모바일에서도 가로 배치 */
+  .input-row.two-col.card-expiry-row {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  /* 비율 클래스 모바일에서 100% */
+  .input-row.two-col .form-field.device-model-field,
+  .input-row.two-col .form-field.device-serial-field,
+  .input-row.two-col .form-field.email-input-field,
+  .input-row.two-col .form-field.email-domain-field {
+    flex: 1 1 100%;
+  }
+
+  /* Input 스타일 모바일 */
+  .input-type2,
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"] {
+    height: 56px;
+    padding: 0 16px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+
+  /* Select 스타일 모바일 */
+  .select-type2 {
+    height: 56px;
+    padding: 0 36px 0 16px;
+    font-size: 14px;
+    border-radius: 12px;
+    background-position: right 12px center;
+  }
+
+  /* Custom Select 모바일 */
+  .custom-select-trigger {
+    height: 56px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 12px;
+  }
+
+  .custom-select-trigger::after {
+    right: 12px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .custom-select-options {
+    border-radius: 12px;
+  }
+
+  .custom-select-option {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  /* Checkbox 모바일 */
+  .chk-ico {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+
+  .chk-txt {
+    font-size: 15px;
+  }
+
+  .checkbox-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* 기타 부가서비스 데스크톱 input 스타일 */
+  .checkbox-with-input .input-wrap input.desktop-only {
+    height: 56px;
+    padding: 0 16px;
+    font-size: 15px;
+    font-weight: 600;
+    border: 1px solid #E3E3E3;
+    border-radius: 12px;
+  }
+
+  /* Field Label Row 모바일 */
+  .field-label-row {
+    margin-bottom: 8px;
+  }
+
+  /* eSIM Notice 모바일 */
+  .esim-notice {
+    padding: 20px;
+    font-size: 15px;
+    border-radius: 12px;
+  }
+
+  /* col-two 모바일 */
+  .col-two {
+    padding: 20px;
+    gap: 24px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+
+  /* Address 모바일 */
+  .address-wrap {
+    gap: 12px;
+  }
+
+  .address-row {
+    flex-direction: row !important;
+    gap: 12px;
+  }
+
+  .btn-address {
+    height: 48px;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 12px;
+    width: 30%;
+  }
+
+  /* Form Actions 모바일 - 하단 고정 */
+  .form-actions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: #fff;
+    border-top: 1px solid #E3E3E3;
+    margin-bottom: 0;
+    z-index: 100;
+  }
+
+  .btn-print {
+    width: 100%;
+    height: 52px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+
+  /* 토글 필드 margin 조정 */
+  .toggle-field-mt {
+    margin-top: 12px;
+  }
+
+  .mt-10 {
+    margin-top: 8px;
+  }
+
+  .mt-12 {
+    margin-top: 10px;
+  }
+
+  /* 마진 유틸리티 모바일 */
+  .mb_12 {
+    margin-bottom: 10px;
+  }
+
+  .mb_16 {
+    margin-bottom: 12px;
+  }
+
+  /* 이전 통신사 사용 요금 / 단말기 할부금 모바일 */
+  .previous-carrier-group .checkbox-label-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .previous-carrier-group .checkbox-label-row .field-label-text {
+    flex: none;
+    width: 100%;
+  }
+
+  .previous-carrier-group .checkbox-label-row .chk-box {
+    flex: none;
+    width: 100%;
+  }
+
+  .chk-box+.chk-box {
+    margin-left: 0;
+  }
+
+  /* 외국인 등록(여권)번호 라벨 - 모바일에서 2줄로 표시 */
+  .passport_en::before {
+    display: block; /* 모바일에서는 줄바꿈 */
+  }
+}
+
+
